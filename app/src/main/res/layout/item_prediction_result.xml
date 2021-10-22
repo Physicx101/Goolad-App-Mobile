@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardUseCompatPadding="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginStart="@dimen/spacing_middle"
+    android:layout_marginEnd="@dimen/spacing_middle"
+    android:layout_marginTop="@dimen/spacing_middle"
+    app:strokeColor="@color/colorPrimary"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_item_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_cardview"
+        android:padding="@dimen/spacing_large">
+
+
+        <TextView
+            android:id="@+id/text_prediction_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_middle"
+            android:layout_marginEnd="@dimen/spacing_mxlarge"
+            android:layout_marginBottom="@dimen/spacing_xmedium"
+            android:ellipsize="end"
+            android:padding="@dimen/spacing_small"
+            android:background="@color/diagnosis_bg"
+            android:fontFamily="@font/rubik_medium"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/text_prediction_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            tools:text="Terdeteksi Diabetes" />
+
+        <TextView
+            android:id="@+id/text_prediction_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_middle"
+            android:layout_marginEnd="@dimen/spacing_mxlarge"
+            android:layout_marginBottom="@dimen/spacing_xmedium"
+            android:ellipsize="end"
+            android:fontFamily="@font/rubik"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="1.5sp"
+            android:maxLines="2"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/text_prediction_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_prediction_result"
+            android:text="15 Oktober 2021 • 12:11" />
+
+        <TextView
+            android:id="@+id/text_prediction_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_middle"
+            android:layout_marginEnd="@dimen/spacing_mxlarge"
+            android:layout_marginBottom="@dimen/spacing_xmedium"
+            android:fontFamily="@font/rubik"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_prediction_date"
+            android:text="Lihat detail" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

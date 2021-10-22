@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "573074741824",
+    "project_id": "goolad-d0c96",
+    "storage_bucket": "goolad-d0c96.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573074741824:android:bcd80b44eee461c4815da5",
+        "android_client_info": {
+          "package_name": "com.isotech.goolad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573074741824-jn0ghcaobpm0ijne9m795gh3su0k2uah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFJgmp0WmOgsdgKhoKLZDTFKv3p0AYSd8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573074741824-jn0ghcaobpm0ijne9m795gh3su0k2uah.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

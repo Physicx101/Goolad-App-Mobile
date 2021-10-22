@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_dialog_prediction_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@drawable/bg_bottom_sheet"
+    android:focusableInTouchMode="true"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:paddingBottom="20dp">
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_prediction_detail"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:padding="@dimen/spacing_mlarge"
+            android:src="@drawable/ic_check"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="@dimen/spacing_middle" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_draggable"
+            android:backgroundTint="@color/lightGray"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".095" />
+
+        <TextView
+            android:id="@+id/text_prediction_result_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/green"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_prediction_detail"
+            tools:text="Tidak Terdeteksi Diabetes" />
+
+
+        <TextView
+            android:id="@+id/label_prediction_pregnancies_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_smlarge"
+            android:fontFamily="@font/rubik"
+            android:includeFontPadding="false"
+            android:text="Banyak Kehamilan"
+            android:textColor="@color/grey_60"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/text_prediction_pregnancies_detail"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_prediction_result_detail" />
+
+        <TextView
+            android:id="@+id/text_prediction_pregnancies_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:fontFamily="@font/rubik"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_pregnancies_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_pregnancies_detail"
+            app:layout_constraintTop_toBottomOf="@id/label_prediction_pregnancies_detail"
+            tools:text="1" />
+
+
+        <TextView
+            android:id="@+id/label_prediction_glucose_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/rubik"
+            android:text="Kadar Glukosa"
+            android:textColor="@color/grey_60"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/label_prediction_pregnancies_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
+            app:layout_constraintTop_toTopOf="@id/label_prediction_pregnancies_detail" />
+
+        <TextView
+            android:id="@+id/text_prediction_glucose_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_prediction_pregnancies_detail"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_glucose_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_glucose_detail"
+            app:layout_constraintTop_toTopOf="@id/text_prediction_pregnancies_detail"
+            tools:text="85" />
+
+        <TextView
+            android:id="@+id/label_prediction_blood_pressure_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:fontFamily="@font/rubik"
+            android:text="Tekanan Darah"
+            android:textColor="@color/grey_60"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_pregnancies_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_pregnancies_detail"
+            app:layout_constraintTop_toBottomOf="@id/text_prediction_pregnancies_detail" />
+
+        <TextView
+            android:id="@+id/text_prediction_blood_pressure_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:fontFamily="@font/rubik"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_blood_pressure_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_blood_pressure_detail"
+            app:layout_constraintTop_toBottomOf="@id/label_prediction_blood_pressure_detail"
+            tools:text="66" />
+
+        <TextView
+            android:id="@+id/label_prediction_skin_thickness_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="Ketebalan kulit"
+            android:textColor="@color/grey_60"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/label_prediction_blood_pressure_detail"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_glucose_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_glucose_detail"
+            app:layout_constraintTop_toTopOf="@id/label_prediction_blood_pressure_detail" />
+
+
+        <TextView
+            android:id="@+id/text_prediction_skin_thickness_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_prediction_blood_pressure_detail"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_skin_thickness_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_skin_thickness_detail"
+            app:layout_constraintTop_toTopOf="@id/text_prediction_blood_pressure_detail"
+            tools:text="29" />
+
+        <TextView
+            android:id="@+id/label_prediction_insulin_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:fontFamily="@font/rubik"
+            android:text="Kadar Insulin"
+            android:textColor="@color/grey_60"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_blood_pressure_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_blood_pressure_detail"
+            app:layout_constraintTop_toBottomOf="@id/text_prediction_blood_pressure_detail" />
+
+        <TextView
+            android:id="@+id/text_prediction_insulin_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:fontFamily="@font/rubik"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_insulin_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_insulin_detail"
+            app:layout_constraintTop_toBottomOf="@id/label_prediction_insulin_detail"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/label_prediction_bmi_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="Indeks Massa Tubuh"
+            android:textColor="@color/grey_60"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/label_prediction_insulin_detail"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_skin_thickness_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_skin_thickness_detail"
+            app:layout_constraintTop_toTopOf="@id/label_prediction_insulin_detail" />
+
+
+        <TextView
+            android:id="@+id/text_prediction_bmi_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_prediction_insulin_detail"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_bmi_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_bmi_detail"
+            app:layout_constraintTop_toTopOf="@id/text_prediction_insulin_detail"
+            tools:text="26.6" />
+
+        <TextView
+            android:id="@+id/label_prediction_pedigree_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:fontFamily="@font/rubik"
+            android:text="Probabilitas Terkena Diabetes"
+            android:textColor="@color/grey_60"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_insulin_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_insulin_detail"
+            app:layout_constraintTop_toBottomOf="@id/text_prediction_insulin_detail" />
+
+        <TextView
+            android:id="@+id/text_prediction_pedigree_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:fontFamily="@font/rubik"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_pedigree_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_pedigree_detail"
+            app:layout_constraintTop_toBottomOf="@id/label_prediction_pedigree_detail"
+            tools:text="0.351" />
+
+        <TextView
+            android:id="@+id/label_prediction_age_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="Umur"
+            android:textColor="@color/grey_60"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/label_prediction_pedigree_detail"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_bmi_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_bmi_detail"
+            app:layout_constraintTop_toTopOf="@id/label_prediction_pedigree_detail" />
+
+
+        <TextView
+            android:id="@+id/text_prediction_age_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_prediction_pedigree_detail"
+            app:layout_constraintEnd_toEndOf="@id/label_prediction_age_detail"
+            app:layout_constraintStart_toStartOf="@id/label_prediction_age_detail"
+            app:layout_constraintTop_toTopOf="@id/text_prediction_pedigree_detail"
+            tools:text="31" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
