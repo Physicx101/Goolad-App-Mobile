@@ -6,6 +6,7 @@
     <color name="colorAccent">#2e5480</color>
 
     <color name="diagnosis_bg">#729EDB</color>
+    <color name="diagnosis_bg_light">#a5cfff</color>
 
     <color name="placeholder_bg">#dddddd</color>
 
