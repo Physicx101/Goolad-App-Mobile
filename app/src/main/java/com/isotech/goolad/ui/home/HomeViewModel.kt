@@ -77,7 +77,7 @@ class HomeViewModel : BaseViewModel() {
     fun predict(parameter: Parameter) {
         compositeDisposable.add(
             repo.predict(parameter)
-                .subscribeOn(Schedulers.io())
+                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     sheetLoading.value = false
@@ -100,7 +100,7 @@ class HomeViewModel : BaseViewModel() {
         sheetLoading.value = true
         compositeDisposable.add(
             pred.getPredictionById(userId, predictionId)
-                .subscribeOn(Schedulers.io())
+                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     sheetLoading.value = false

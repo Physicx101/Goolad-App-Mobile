@@ -15,7 +15,7 @@ data class Parameter(
     @SerializedName("BMI") val bmi: Double,
     @SerializedName("DiabetesPedigreeFunction") val diabetesPedigreeFunction: Double,
     @SerializedName("Age") val age: Int,
-    @SerializedName("Diagnosis") val diagnosis: String? = ""
+    @SerializedName("Diagnosis") var diagnosis: String? = ""
 )
 
 //    fun Timestamp.toDate(): Date {

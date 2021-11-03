@@ -11,7 +11,7 @@
     android:layout_marginStart="@dimen/spacing_middle"
     android:layout_marginEnd="@dimen/spacing_middle"
     android:layout_marginTop="@dimen/spacing_middle"
-    app:strokeColor="@color/colorPrimary"
+    app:strokeColor="@color/diagnosis_bg"
     app:strokeWidth="1dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,8 +30,6 @@
             android:layout_marginEnd="@dimen/spacing_mxlarge"
             android:layout_marginBottom="@dimen/spacing_xmedium"
             android:ellipsize="end"
-            android:padding="@dimen/spacing_xmedium"
-            android:background="@drawable/bg_rounded_corners"
             android:fontFamily="@font/rubik_medium"
             android:includeFontPadding="false"
             android:maxLines="1"

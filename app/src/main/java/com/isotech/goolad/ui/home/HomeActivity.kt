@@ -5,6 +5,8 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -57,6 +59,8 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var userId: String
     private var paramId: String = ""
     private var predictionList = emptyList<Parameter>()
+
+    private lateinit var parameter: Parameter
 
     private val addParameterDialog by lazy {
         val dialog = BottomSheetDialog(this, R.style.BottomSheetDialog)
@@ -149,10 +153,17 @@ class HomeActivity : AppCompatActivity() {
             }
             it.diagnosis.let { diagnosis ->
                 if (diagnosis.diagnosis.isNotEmpty()) {
-                    homeViewModel.postPredictionResult(userId, paramId, diagnosis)
+                    parameter.diagnosis = diagnosis.diagnosis
+                    homeViewModel.postParameter(userId, parameter)
+                    //homeViewModel.postPredictionResult(userId, paramId, diagnosis)
                     addParameterDialog.dismiss()
-                    val currentPrediction = predictionList.filter { it.id == paramId }
-                    openPredictionDetail(currentPrediction[0], diagnosis.diagnosis)
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        binding.rvPrediction.findViewHolderForAdapterPosition(0)?.itemView?.performClick()
+                    }, 200)
+
+//                    homeViewModel.getPredictionById(userId, parameter.id)
+//                    val currentPrediction = predictionList.filter { it.id == paramId }
+//                      openPredictionDetail(currentPrediction[0], diagnosis.diagnosis)
                 }
             }
             it.predictions?.let { liveData ->
@@ -168,6 +179,9 @@ class HomeActivity : AppCompatActivity() {
                     }
                 })
             }
+//            it.prediction?.let { prediction ->
+//                openPredictionDetail(prediction, prediction.diagnosis!!)
+//            }
         })
         authViewModel.getCurrentUser().observe(this, { firebaseUser ->
             firebaseUser?.let {
@@ -210,7 +224,7 @@ class HomeActivity : AppCompatActivity() {
                 val inputPedigree = input_pedigree.text.toString().trim().toDouble()
                 val inputAge = input_age.text.toString().trim().toInt()
                 paramId = autoID()
-                val parameter = Parameter(
+                parameter = Parameter(
                     paramId,
                     getCurrentDateTime(),
                     inputPregnancies,
@@ -223,7 +237,6 @@ class HomeActivity : AppCompatActivity() {
                     inputAge
                 )
                 homeViewModel.sheetLoading.value = true
-                homeViewModel.postParameter(userId, parameter)
                 homeViewModel.predict(parameter)
             }
         }
@@ -250,7 +263,7 @@ class HomeActivity : AppCompatActivity() {
             val finalDiagnosis: String = if (parameter.diagnosis!!.isEmpty()) {
                 diagnosis
             } else {
-                parameter.diagnosis
+                parameter.diagnosis!!
             }
             if (finalDiagnosis.contains("tidak", true)) {
                 img_prediction_detail.setImageDrawable(
